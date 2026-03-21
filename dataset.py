@@ -18,6 +18,7 @@ Target:
 
 import pandas as pd
 import numpy as np
+from numpy.distutils.conv_template import header
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler, LabelEncoder
 from sklearn.pipeline import Pipeline
@@ -138,6 +139,60 @@ def predict_crop(model, N, P, K, temperature, humidity, ph, rainfall):
     scaled = sc.transform(raw)
     return le.inverse_transform(model.predict(scaled))[0]
 
+PEST_CSV = "crop_pests.csv"
+def get_crop_pests(crop_name, severity_filter=None):
+
+    #Return known pests for a given crop from the lookup table.
+    pests = pd.read_csv(PEST_CSV)
+    result = pests[pests["crop"] == crop_name.lower()].drop(columns="crop")
+    if severity_filter:
+        result = result[result["severity"] == severity_filter]
+    return result[["pest_name", "scientific_name"]].head(3).reset_index(drop=True)
+
+
+def recommend_with_pests(model, N, P, K, temperature, humidity, ph, rainfall,
+                         top_n=3, severity_filter=None):
+
+    crops = top_3_crops(model, N, P, K, temperature, humidity, ph, rainfall, top_n)
+    for entry in crops:
+        entry["pests"] = get_crop_pests(entry["crop"])
+    return crops
+
+
+def top_3_crops(model, N, P, K, temperature, humidity, ph, rainfall, top_n=3):
+    """
+    Returns
+    -------
+    list of dict, each with keys:
+        rank        (int)   - 1 = best match
+        crop        (str)   - crop name
+        confidence  (float) - model probability, rounded to 4 dp
+    """
+
+    if not hasattr(model, "predict_proba"):
+        raise ValueError(
+            f"{type(model).__name__} does not support predict_proba. "
+            "For SVC, set probability=True at construction time."
+        )
+
+    sc = joblib.load("scaler.joblib")
+    le = joblib.load("label_encoder.joblib")
+
+    raw = np.array([[N, P, K, temperature, humidity, ph, rainfall]])
+    scaled = sc.transform(raw)
+
+    proba = model.predict_proba(scaled)[0]  # shape: (n_classes,)
+    top_idx = np.argsort(proba)[::-1][:top_n]  # indices of top-N, descending
+
+    return [
+        {
+            "rank": rank + 1,
+            "crop": le.classes_[idx],
+            "confidence": round(float(proba[idx]), 4),
+        }
+        for rank, idx in enumerate(top_idx)
+    ]
+
 
 # ── 10. Example: quick baseline with Random Forest ─────────────────────────────
 if __name__ == "__main__":
@@ -156,7 +211,18 @@ if __name__ == "__main__":
     ))
 
     # Example single prediction
+    """
     crop = predict_crop(clf, N=72, P=53, K=18,
                         temperature=21, humidity=63.0,
                         ph=5.6, rainfall=87.0)
     print(f"Example prediction → {crop}")
+    """
+
+    print("Top 3 crop Recommendation")
+    sample = dict(N=90,P=42,K=43, temperature=20.9,humidity=82.0, ph=6.5, rainfall=203.0)
+    results = recommend_with_pests(clf, **sample, severity_filter=None)
+
+    for r in results:
+        print(f"  #{r['rank']}  {r['crop']:<15} {r['confidence']:>6.1%}")
+        print(r["pests"].to_string(index=False, header=False))
+        print()
