@@ -8,7 +8,7 @@
   gap: 6px;
   padding: 7px 14px;
   border-bottom: 1px solid var(--border);
-  transition: background 0.15s;
+  transition: --bg 0.15s;
 }
 
 .point-row:last-child {
@@ -39,7 +39,7 @@
 .point-row__input {
   width: 100%;
   padding: 5px 7px;
-  background: #f7faf3;
+  background: var(--fern);
   border: 1px solid var(--border);
   border-radius: 6px;
   color: var(--text-main);
@@ -58,14 +58,14 @@
 
 .point-row__input:hover {
   border-color: var(--fern);
-  background: #f0f7e8;
+  background: var(--forest);
 }
 
 .point-row__input:focus {
   outline: none;
   border-color: var(--fern);
   box-shadow: 0 0 0 2px var(--lime-glow);
-  background: #ffffff;
+  background: var(--lime-glow);
 }
 
 .point-row__input::-webkit-inner-spin-button,

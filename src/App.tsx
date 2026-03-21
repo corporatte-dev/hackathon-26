@@ -2,8 +2,9 @@ import { useState } from 'react';
 import axios from 'axios';
 import './App.css';
 import PointRow from './components/pointrow';
-import type { Field } from './types';
+import type { CropResult, Field, PointResult } from './types';
 import TableHeader from './components/tableheader';
+import ResultsCard from './components/results-card';
 
 export const FIELDS: Field[] = [
   { name: 'N',           label: 'N',    unit: 'mg/kg', step: '1',    icon: '🌿' },
@@ -14,6 +15,15 @@ export const FIELDS: Field[] = [
   { name: 'ph',          label: 'pH',   unit: 'pH',    step: '0.01', icon: '⚗️' },
   { name: 'rainfall',    label: 'Rain', unit: 'mm',    step: '0.01', icon: '🌧️' },
 ];
+
+// Shape expected from the Python API for each point:
+// {
+//   crops: [
+//     { rank: 1, name: "wheat", confidence: 87.4, pests: [{ name: "aphids", severity: "high" }] },
+//     { rank: 2, name: "rice",  confidence: 64.1, pests: [...] },
+//     { rank: 3, name: "maize", confidence: 51.0, pests: [...] },
+//   ]
+// }
 
 type Point = {
   id: number;
@@ -29,6 +39,7 @@ const newPoint = (): Point => ({ id: nextId++, values: emptyValues(), result: nu
 export default function App() {
   const [points, setPoints] = useState<Point[]>([newPoint()]);
   const [globalLoading, setGlobalLoading] = useState(false);
+  const [results, setResults]   = useState<PointResult[]>([]);
 
   const updateValue = (id: number, field: string, value: string) =>
     setPoints(pts =>
@@ -46,22 +57,26 @@ export default function App() {
     return response.data.crop as string;
   };
 
-  const handleAnalyzeAll = async () => {
+    const handleAnalyzeAll = async () => {
     setGlobalLoading(true);
-    setPoints(pts => pts.map(p => ({ ...p, loading: true, result: null })));
-
-    const updated = await Promise.all(
-      points.map(async p => {
-        try {
-          const result = await predictOne(p);
-          return { ...p, result, loading: false };
-        } catch {
-          return { ...p, result: 'Error', loading: false };
-        }
-      })
+    setResults([]);
+    setPoints(pts => pts.map(p => ({ ...p, loading: true })));
+ 
+    const settled = await Promise.allSettled(
+      points.map((p, idx) => predictOne(p).then(crops => ({ pointIndex: idx + 1, crops })))
     );
-
-    setPoints(updated);
+ 
+    const newResults: PointResult[] = settled.map((s, idx) =>
+      s.status === 'fulfilled'
+        ? s.value
+        : {
+            pointIndex: idx + 1,
+            crops: [{ rank: 1, name: 'Error', confidence: 0, pests: [] }] as CropResult[],
+          }
+    );
+ 
+    setPoints(pts => pts.map(p => ({ ...p, loading: false })));
+    setResults(newResults);
     setGlobalLoading(false);
   };
 
@@ -74,20 +89,16 @@ export default function App() {
       <header className="header">
         <div className="header-badge">AI-POWERED</div>
         <h1 className="title">
-          <span className="title-main">Smart Soil</span>
-          <span className="title-sub">Analyzer</span>
+          <span className="title-main">Smart Soil Analyzer</span>
         </h1>
         <p className="subtitle">
-          Add one or more soil sample points, fill in their parameters, and run a batch prediction.
+          Add one or more soil sample points, fill in their parameters, and run the analysis on the points.
         </p>
       </header>
 
       <main className="card">
-
-        {/* Column headers */}
         <TableHeader fields={FIELDS} />
 
-        {/* Point rows — rendered by PointRow component */}
         <div className="table-body">
           {points.map((point, idx) => (
             <PointRow
@@ -104,7 +115,6 @@ export default function App() {
           ))}
         </div>
 
-        {/* Actions */}
         <div className="table-actions">
           <button className="btn-add" onClick={addPoint}>
             + Add Sample Point
@@ -116,12 +126,16 @@ export default function App() {
           >
             {globalLoading
               ? <><span className="spinner spinner--light" /> Analyzing…</>
-              : <><span>🔬</span> Analyze All</>
+              : <>Analyze All</>
             }
           </button>
         </div>
 
       </main>
+
+      {results.length > 0 && (
+        <ResultsCard results={results} />
+      )}
 
       <footer className="footer">
         Powered by machine learning · Results are advisory only
