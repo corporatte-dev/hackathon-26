@@ -1,0 +1,359 @@
+/* ─── Google Font Import ─────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=Nunito:wght@400;500;600&display=swap');
+
+/* ─── Design Tokens ──────────────────────────────────────────── */
+:root {
+  /* Brand palette */
+  --forest:       #2D5C2E;   /* deep forest green — backgrounds, dark surfaces */
+  --fern:         #6B964A;   /* mid fern green — secondary accents, borders     */
+  --lime:         #96C24D;   /* bright lime — primary accent, highlights        */
+  --yellow-green: #D4E273;   /* light yellow-green — text on dark, glows        */
+  --navy:         #1e4434;   /* dark navy — card backgrounds, contrast surface  */
+
+  /* Derived tokens */
+  --bg:           #1a1f18;   /* slightly darker than forest for page bg         */
+  --card-bg:      rgba(32, 60, 47, 0.88);   /* navy with transparency           */
+  --text-main:    #eef4d8;   /* warm near-white, based on yellow-green          */
+  --text-muted:   #8aab6a;   /* muted fern tone                                 */
+  --border:       rgba(107, 150, 74, 0.28); /* fern at low opacity              */
+  --border-hover: rgba(150, 194, 77, 0.6);  /* lime at mid opacity              */
+  --lime-glow:    rgba(150, 194, 77, 0.18);
+  --shadow-card:  0 24px 64px rgba(0,0,0,0.55), 0 4px 16px rgba(0,0,0,0.3);
+  --shadow-btn:   0 4px 20px rgba(150, 194, 77, 0.35);
+}
+
+/* ─── Reset & Base ───────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background-color: var(--bg);
+  color: var(--text-main);
+  font-family: 'Nunito', sans-serif;
+  min-height: 100vh;
+}
+
+/* ─── Page Shell ─────────────────────────────────────────────── */
+.page {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 56px 20px 40px;
+  background:
+    radial-gradient(ellipse 80% 50% at 50% -10%, rgba(45,92,46,0.35) 0%, transparent 70%),
+    radial-gradient(ellipse 60% 40% at 80% 90%, rgba(45,48,71,0.4) 0%, transparent 60%),
+    linear-gradient(160deg, #131a13 0%, #1a1f18 50%, #151a24 100%);
+  overflow-x: hidden;
+}
+
+/* subtle grain overlay */
+.noise {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  opacity: 0.045;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+}
+
+/* ─── Header ─────────────────────────────────────────────────── */
+.header {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  margin-bottom: 36px;
+  animation: fadeDown 0.7s ease both;
+}
+
+.header-badge {
+  display: inline-block;
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  color: var(--yellow-green);
+  background: rgba(150, 194, 77, 0.12);
+  border: 1px solid rgba(212, 226, 115, 0.3);
+  border-radius: 100px;
+  padding: 4px 14px;
+  margin-bottom: 18px;
+}
+
+.title {
+  font-family: 'DM Serif Display', serif;
+  line-height: 1;
+  margin-bottom: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.title-main {
+  font-size: clamp(44px, 8vw, 72px);
+  color: var(--text-main);
+  letter-spacing: -0.02em;
+}
+
+.title-sub {
+  font-size: clamp(44px, 8vw, 72px);
+  font-style: italic;
+  color: var(--lime);
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  max-width: 460px;
+  margin: 0 auto;
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+/* ─── Card ───────────────────────────────────────────────────── */
+.card {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 640px;
+  background: linear-gradient(145deg, --navy 0%, --card-bg 100%);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 36px 36px 32px;
+  box-shadow: var(--shadow-card);
+  backdrop-filter: blur(8px);
+  animation: fadeUp 0.7s 0.15s ease both;
+}
+
+.card-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  color: var(--text-muted);
+  margin-bottom: 28px;
+}
+
+/* ─── Form Grid ──────────────────────────────────────────────── */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+@media (max-width: 520px) {
+  .grid { grid-template-columns: 1fr; }
+  .card { padding: 24px 20px; }
+}
+
+/* ─── Field ──────────────────────────────────────────────────── */
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.field-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--yellow-green);
+  text-transform: uppercase;
+}
+
+.field-icon {
+  font-size: 14px;
+  line-height: 1;
+}
+
+.field-unit {
+  margin-left: auto;
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  color: var(--text-muted);
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0.05em;
+}
+
+/* ─── Input ──────────────────────────────────────────────────── */
+.input {
+  width: 100%;
+  padding: 10px 14px;
+  background: rgba(20, 22, 38, 0.75);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  color: var(--text-main);
+  font-family: 'DM Mono', monospace;
+  font-size: 14px;
+  transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+  appearance: none;
+  -moz-appearance: textfield;
+}
+
+.input::placeholder { color: var(--text-muted); opacity: 0.6; }
+
+.input:hover {
+  border-color: var(--border-hover);
+  background: rgba(20, 22, 38, 0.9);
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--lime);
+  box-shadow: 0 0 0 3px var(--lime-glow);
+  background: rgba(20, 22, 38, 0.95);
+}
+
+/* hide number spinners */
+.input::-webkit-inner-spin-button,
+.input::-webkit-outer-spin-button { -webkit-appearance: none; }
+
+/* ─── Button ─────────────────────────────────────────────────── */
+.table-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 14px;
+  border-top: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0);
+}
+ 
+.btn-add {
+  font-family: 'Nunito', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--fern);
+  background: transparent;
+  border: 1.5px dashed rgba(107, 150, 74, 0.45);
+  border-radius: 8px;
+  padding: 7px 16px;
+  cursor: pointer;
+  transition: --bg 0.15s, border-color 0.15s, color 0.15s;
+  letter-spacing: 0.01em;
+}
+ 
+.btn-add:hover {
+  background: rgba(150, 194, 77, 0.1);
+  border-color: var(--fern);
+  color: var(--forest);
+}
+ 
+.btn-analyze {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: #ffffff;
+  background: linear-gradient(135deg, var(--forest) 0%, var(--fern) 100%);
+  border: none;
+  border-radius: 10px;
+  padding: 9px 22px;
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.2s, filter 0.2s;
+}
+ 
+.btn-analyze:hover:not(:disabled) {
+  transform: translateY(-1px);
+  filter: brightness(1.07);
+}
+ 
+.btn-analyze:active:not(:disabled) {
+  transform: translateY(0);
+}
+ 
+.btn-analyze:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ─── Spinner ────────────────────────────────────────────────── */
+.spinner {
+  width: 16px;
+  height: 16px;
+  border: 2.5px solid rgba(15, 26, 15, 0.3);
+  border-top-color: #0f1a0f;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  flex-shrink: 0;
+}
+
+/* ─── Result ─────────────────────────────────────────────────── */
+.result {
+  margin-top: 28px;
+  padding: 24px;
+  background: linear-gradient(135deg, rgba(45,92,46,0.2), rgba(107,150,74,0.08));
+  border: 1px solid rgba(150, 194, 77, 0.3);
+  border-radius: 14px;
+  text-align: center;
+  animation: popIn 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+.result-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  color: var(--lime);
+  margin-bottom: 10px;
+}
+
+.result-crop {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(28px, 6vw, 44px);
+  font-style: italic;
+  color: var(--text-main);
+  letter-spacing: -0.01em;
+  text-transform: capitalize;
+}
+
+.result-bar {
+  width: 48px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--forest), var(--lime));
+  border-radius: 99px;
+  margin: 14px auto 0;
+}
+
+/* ─── Footer ─────────────────────────────────────────────────── */
+.footer {
+  position: relative;
+  z-index: 1;
+  margin-top: 28px;
+  font-size: 11px;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+  animation: fadeUp 0.7s 0.3s ease both;
+}
+
+/* ─── Animations ─────────────────────────────────────────────── */
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes popIn {
+  from { opacity: 0; transform: scale(0.92); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}

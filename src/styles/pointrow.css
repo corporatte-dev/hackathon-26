@@ -1,0 +1,173 @@
+/* ─── PointRow ───────────────────────────────────────────────── */
+/* Scoped styles for the PointRow component.                      */
+/* Layout variables (col widths, gaps) mirror App.css table cols. */
+
+.point-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  border-bottom: 1px solid var(--border);
+  transition: background 0.15s;
+}
+
+.point-row:last-child {
+  border-bottom: none;
+}
+
+.point-row:hover {
+  background: var(--row-hover);
+}
+
+/* ── Index ── */
+.point-row__index {
+  width: 28px;
+  flex-shrink: 0;
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: var(--text-subtle);
+  text-align: center;
+  user-select: none;
+}
+
+/* ── Input cell ── */
+.point-row__cell {
+  flex: 1;
+  min-width: 0;
+}
+
+.point-row__input {
+  width: 100%;
+  padding: 5px 7px;
+  background: #f7faf3;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--text-main);
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+  text-align: center;
+  transition: border-color 0.15s, box-shadow 0.15s, background 0.15s;
+  appearance: none;
+  -moz-appearance: textfield;
+}
+
+.point-row__input::placeholder {
+  color: var(--text-subtle);
+  opacity: 0.5;
+}
+
+.point-row__input:hover {
+  border-color: var(--fern);
+  background: #f0f7e8;
+}
+
+.point-row__input:focus {
+  outline: none;
+  border-color: var(--fern);
+  box-shadow: 0 0 0 2px var(--lime-glow);
+  background: #ffffff;
+}
+
+.point-row__input::-webkit-inner-spin-button,
+.point-row__input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+/* ── Result column ── */
+.point-row__result {
+  width: 96px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.point-row__chip {
+  display: inline-block;
+  padding: 3px 10px;
+  background: rgba(107, 150, 74, 0.12);
+  border: 1px solid rgba(107, 150, 74, 0.35);
+  border-radius: 100px;
+  font-family: 'DM Serif Display', serif;
+  font-style: italic;
+  font-size: 13px;
+  color: var(--forest);
+  white-space: nowrap;
+  text-transform: capitalize;
+  animation: pointrow-popin 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+.point-row__chip--error {
+  background: rgba(200, 50, 50, 0.08);
+  border-color: rgba(200, 50, 50, 0.3);
+  color: #b03030;
+  font-family: 'DM Mono', monospace;
+  font-style: normal;
+  font-size: 11px;
+}
+
+.point-row__empty {
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+  color: var(--text-subtle);
+  opacity: 0.45;
+}
+
+/* ── Spinner ── */
+.point-row__spinner {
+  display: inline-block;
+  width: 13px;
+  height: 13px;
+  border: 2px solid rgba(45, 92, 46, 0.18);
+  border-top-color: var(--fern);
+  border-radius: 50%;
+  animation: pointrow-spin 0.7s linear infinite;
+  flex-shrink: 0;
+}
+
+/* ── Remove button ── */
+.point-row__remove {
+  width: 28px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.point-row__remove-btn {
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  color: var(--text-subtle);
+  font-size: 10px;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+  padding: 0;
+  line-height: 1;
+}
+
+.point-row__remove-btn:hover:not(:disabled) {
+  background: rgba(200, 50, 50, 0.08);
+  border-color: rgba(200, 50, 50, 0.3);
+  color: #b03030;
+}
+
+.point-row__remove-btn:disabled {
+  opacity: 0.2;
+  cursor: not-allowed;
+}
+
+/* ── Keyframes (scoped prefix to avoid collision) ── */
+@keyframes pointrow-popin {
+  from { opacity: 0; transform: scale(0.8); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes pointrow-spin {
+  to { transform: rotate(360deg); }
+}
