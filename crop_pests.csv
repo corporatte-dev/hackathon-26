@@ -1,0 +1,133 @@
+crop,pest_name,scientific_name,pest_type,damage_part,severity,eppo_code,source_url
+apple,Codling Moth,Cydia pomonella,Insect,Fruit,High,CARPPO,https://gd.eppo.int/taxon/CARPPO/datasheet
+apple,Apple Aphid,Aphis pomi,Insect,Leaves/Shoots,Medium,APHIPO,https://gd.eppo.int/taxon/APHIPO/datasheet
+apple,Wooly Apple Aphid,Eriosoma lanigerum,Insect,Roots/Bark,Medium,ERYSLA,https://gd.eppo.int/taxon/ERYSLA/datasheet
+apple,San Jose Scale,Quadraspidiotus perniciosus,Insect,Bark/Fruit,High,QUADPE,https://gd.eppo.int/taxon/QUADPE/datasheet
+apple,Apple Maggot,Rhagoletis pomonella,Insect,Fruit,High,RHAGPO,https://gd.eppo.int/taxon/RHAGPO/datasheet
+apple,European Red Mite,Panonychus ulmi,Mite,Leaves,Medium,PANOUL,https://gd.eppo.int/taxon/PANOUL/datasheet
+banana,Banana Weevil,Cosmopolites sordidus,Insect,Corm/Stem,High,COSMSO,https://gd.eppo.int/taxon/COSMSO/datasheet
+banana,Banana Aphid,Pentalonia nigronervosa,Insect,Leaves,Medium,PENANI,https://gd.eppo.int/taxon/PENANI/datasheet
+banana,Thrips,Thrips hawaiiensis,Insect,Fruit/Leaves,Medium,THRIHA,https://gd.eppo.int/taxon/THRIHA/datasheet
+banana,Root-knot Nematode,Meloidogyne incognita,Nematode,Roots,High,MELGIN,https://gd.eppo.int/taxon/MELGIN/datasheet
+banana,Banana Skipper,Erionota thrax,Insect,Leaves,Low,ERINTH,https://gd.eppo.int/taxon/ERINTH/datasheet
+banana,Mealybug,Planococcus citri,Insect,Leaves/Fruit,Medium,PLANCT,https://gd.eppo.int/taxon/PLANCT/datasheet
+blackgram,Aphid,Aphis craccivora,Insect,Leaves/Pods,High,APHICR,https://gd.eppo.int/taxon/APHICR/datasheet
+blackgram,Whitefly,Bemisia tabaci,Insect,Leaves,High,BEMITA,https://gd.eppo.int/taxon/BEMITA/datasheet
+blackgram,Thrips,Thrips palmi,Insect,Flowers/Pods,Medium,THRIPL,https://gd.eppo.int/taxon/THRIPL/datasheet
+blackgram,Pod Borer,Maruca vitrata,Insect,Pods,High,MARUCV,https://gd.eppo.int/taxon/MARUCV/datasheet
+blackgram,Leaf Roller,Lamprosema indicate,Insect,Leaves,Medium,NOTEIN,https://gd.eppo.int/taxon/NOTEIN/datasheet
+blackgram,Root-knot Nematode,Meloidogyne incognita,Nematode,Roots,Medium,MELGIN,https://gd.eppo.int/taxon/MELGIN/datasheet
+chickpea,Gram Pod Borer,Helicoverpa armigera,Insect,Pods/Flowers,High,HELIAR,https://gd.eppo.int/taxon/HELIAR/datasheet
+chickpea,Aphid,Aphis craccivora,Insect,Leaves/Shoots,High,APHICR,https://gd.eppo.int/taxon/APHICR/datasheet
+chickpea,Cutworm,Agrotis ipsilon,Insect,Stem/Leaves,Medium,AGRTIP,https://gd.eppo.int/taxon/AGRTIP/datasheet
+chickpea,Thrips,Caliothrips indicus,Insect,Flowers/Pods,Medium,SCIRTO,https://gd.eppo.int/taxon/SCIRTO/datasheet
+chickpea,Leaf Miner,Liriomyza cicerina,Insect,Leaves,Low,LIRICC,https://gd.eppo.int/taxon/LIRICC/datasheet
+chickpea,Bruchid,Callosobruchus chinensis,Insect,Seeds,High,CALLCH,https://gd.eppo.int/taxon/CALLCH/datasheet
+coconut,Coconut Rhinoceros Beetle,Oryctes rhinoceros,Insect,Crown/Fronds,High,ORYCRH,https://gd.eppo.int/taxon/ORYCRH/datasheet
+coconut,Red Palm Weevil,Rhynchophorus ferrugineus,Insect,Stem/Crown,High,RHYCFE,https://gd.eppo.int/taxon/RHYCFE/datasheet
+coconut,Coconut Mite,Aceria guerreronis,Mite,Nuts,Medium,ACERGU,https://gd.eppo.int/taxon/ACERGU/datasheet
+coconut,Coconut Scale,Aspidiotus destructor,Insect,Leaves/Nuts,Medium,ASPIDE,https://gd.eppo.int/taxon/ASPIDE/datasheet
+coconut,Mealybug,Planococcus citri,Insect,Leaves/Roots,Medium,PLANCT,https://gd.eppo.int/taxon/PLANCT/datasheet
+coconut,Coconut Leafminer,Opisina arenosella,Insect,Leaves,Low,OPISAR,https://gd.eppo.int/taxon/OPISAR/datasheet
+coffee,Coffee Berry Borer,Hypothenemus hampei,Insect,Berries,High,STEHHA,https://gd.eppo.int/taxon/STEHHA/datasheet
+coffee,Coffee Leaf Miner,Leucoptera coffeella,Insect,Leaves,Medium,LEUCCO,https://gd.eppo.int/taxon/LEUCCO/datasheet
+coffee,Antestia Bug,Antestiopsis thunbergii,Insect,Berries/Shoots,High,ANTETH,https://gd.eppo.int/taxon/ANTETH/datasheet
+coffee,Mealybug,Planococcus citri,Insect,Roots/Stems,Medium,PLANCT,https://gd.eppo.int/taxon/PLANCT/datasheet
+coffee,Scale Insect,Coccus viridis,Insect,Stems/Leaves,Medium,COCCVI,https://gd.eppo.int/taxon/COCCVI/datasheet
+coffee,Root-knot Nematode,Meloidogyne incognita,Nematode,Roots,High,MELGIN,https://gd.eppo.int/taxon/MELGIN/datasheet
+cotton,Bollworm,Helicoverpa armigera,Insect,Bolls/Flowers,High,HELIAR,https://gd.eppo.int/taxon/HELIAR/datasheet
+cotton,Cotton Aphid,Aphis gossypii,Insect,Leaves/Shoots,High,APHIGO,https://gd.eppo.int/taxon/APHIGO/datasheet
+cotton,Whitefly,Bemisia tabaci,Insect,Leaves,High,BEMITA,https://gd.eppo.int/taxon/BEMITA/datasheet
+cotton,Pink Bollworm,Pectinophora gossypiella,Insect,Bolls,High,PECTGO,https://gd.eppo.int/taxon/PECTGO/datasheet
+cotton,Thrips,Thrips tabaci,Insect,Leaves/Flowers,Medium,THRITA,https://gd.eppo.int/taxon/THRITA/datasheet
+cotton,Spider Mite,Tetranychus urticae,Mite,Leaves,Medium,TETRUR,https://gd.eppo.int/taxon/TETRUR/datasheet
+grapes,Grape Berry Moth,Lobesia botrana,Insect,Berries,High,POLIBO,https://gd.eppo.int/taxon/POLIBO/datasheet
+grapes,Phylloxera,Daktulosphaira vitifoliae,Insect,Roots/Leaves,High,VITEVI,https://gd.eppo.int/taxon/VITEVI/datasheet
+grapes,Grape Leafhopper,Empoasca vitis,Insect,Leaves,Medium,EMAPVI,https://gd.eppo.int/taxon/EMAPVI/datasheet
+grapes,Mealybug,Planococcus ficus,Insect,Clusters/Bark,Medium,PLANFI,https://gd.eppo.int/taxon/PLANFI/datasheet
+grapes,Grape Thrips,Drepanothrips reuteri,Insect,Flowers/Berries,Medium,DREPRE,https://gd.eppo.int/taxon/DREPRE/datasheet
+grapes,Spider Mite,Tetranychus urticae,Mite,Leaves,Medium,TETRUR,https://gd.eppo.int/taxon/TETRUR/datasheet
+jute,Jute Semilooper,Anomis sabulifera,Insect,Leaves,High,ANOMSA,https://gd.eppo.int/taxon/ANOMSA/datasheet
+jute,Stem Weevil,Apion corchori,Insect,Stem,High,APIONC,https://gd.eppo.int/taxon/APIONC/datasheet
+jute,Bihar Hairy Caterpillar,Spilarctia obliqua,Insect,Leaves,Medium,DIACRB,https://gd.eppo.int/taxon/DIACRB/datasheet
+jute,Whitefly,Bemisia tabaci,Insect,Leaves,Medium,BEMITA,https://gd.eppo.int/taxon/BEMITA/datasheet
+jute,Aphid,Aphis gossypii,Insect,Leaves/Shoots,Low,APHIGO,https://gd.eppo.int/taxon/APHIGO/datasheet
+jute,Mealybug,Phenacoccus solenopsis,Insect,Stems/Leaves,Low,PHENSO,https://gd.eppo.int/taxon/PHENSO/datasheet
+kidneybeans,Bean Weevil,Acanthoscelides obtectus,Insect,Seeds,High,ACANOB,https://gd.eppo.int/taxon/ACANOB/datasheet
+kidneybeans,Aphid,Aphis fabae,Insect,Leaves/Pods,High,APHIFA,https://gd.eppo.int/taxon/APHIFA/datasheet
+kidneybeans,Mexican Bean Beetle,Epilachna varivestis,Insect,Leaves,Medium,EPILVA,https://gd.eppo.int/taxon/EPILVA/datasheet
+kidneybeans,Whitefly,Bemisia tabaci,Insect,Leaves,Medium,BEMITA,https://gd.eppo.int/taxon/BEMITA/datasheet
+kidneybeans,Pod Borer,Maruca vitrata,Insect,Pods,High,MARUCV,https://gd.eppo.int/taxon/MARUCV/datasheet
+kidneybeans,Leaf Roller,Omiodes indicata,Insect,Leaves,Low,NOTEIN,https://gd.eppo.int/taxon/NOTEIN/datasheet
+lentil,Aphid,Aphis craccivora,Insect,Leaves/Pods,High,APHICR,https://gd.eppo.int/taxon/APHICR/datasheet
+lentil,Lentil Pod Borer,Etiella zinckenella,Insect,Pods,High,ETIEZI,https://gd.eppo.int/taxon/ETIEZI/datasheet
+lentil,Thrips,Thrips tabaci,Insect,Flowers/Pods,Medium,THRITA,https://gd.eppo.int/taxon/THRITA/datasheet
+lentil,Cutworm,Agrotis ipsilon,Insect,Stem/Seedlings,Medium,AGRTIP,https://gd.eppo.int/taxon/AGRTIP/datasheet
+lentil,Leaf Miner,Liriomyza cicerina,Insect,Leaves,Low,LIRICC,https://gd.eppo.int/taxon/LIRICC/datasheet
+lentil,Bruchid,Callosobruchus chinensis,Insect,Seeds,High,CALLCH,https://gd.eppo.int/taxon/CALLCH/datasheet
+maize,Fall Armyworm,Spodoptera frugiperda,Insect,Leaves/Ears,High,LAPHFR,https://gd.eppo.int/taxon/LAPHFR/datasheet
+maize,Corn Earworm,Helicoverpa zea,Insect,Ears/Silks,High,HELIZE,https://gd.eppo.int/taxon/HELIZE/datasheet
+maize,Maize Stem Borer,Busseola fusca,Insect,Stem,High,BUSSFU,https://gd.eppo.int/taxon/BUSSFU/datasheet
+maize,Aphid,Rhopalosiphum maidis,Insect,Leaves/Ears,Medium,RHOPMA,https://gd.eppo.int/taxon/RHOPMA/datasheet
+maize,Corn Rootworm,Diabrotica virgifera,Insect,Roots,High,DIABVI,https://gd.eppo.int/taxon/DIABVI/datasheet
+maize,Thrips,Frankliniella williamsi,Insect,Leaves,Medium,FRANWI,https://gd.eppo.int/taxon/FRANWI/datasheet
+mango,Mango Hopper,Idioscopus nitidulus,Insect,Flowers/Shoots,High,IDOSNI,https://gd.eppo.int/taxon/IDOSNI/datasheet
+mango,Fruit Fly,Bactrocera dorsalis,Insect,Fruit,High,DACUDO,https://gd.eppo.int/taxon/DACUDO/datasheet
+mango,Scale Insect,Aulacaspis tubercularis,Insect,Bark/Leaves,Medium,AULATU,https://gd.eppo.int/taxon/AULATU/datasheet
+mango,Mango Mealybug,Rastrococcus invadens,Insect,Shoots/Fruit,High,RASTIV,https://gd.eppo.int/taxon/RASTIV/datasheet
+mango,Leaf Webber,Orthaga euadrusalis,Insect,Leaves,Medium,ORTHEU,https://gd.eppo.int/taxon/ORTHEU/datasheet
+mango,Shoot Borer,Chlumetia transversa,Insect,Shoots,Medium,CHLUTR,https://gd.eppo.int/taxon/CHLUTR/datasheet
+mothbeans,Aphid,Aphis craccivora,Insect,Leaves/Pods,High,APHICR,https://gd.eppo.int/taxon/APHICR/datasheet
+mothbeans,Whitefly,Bemisia tabaci,Insect,Leaves,Medium,BEMITA,https://gd.eppo.int/taxon/BEMITA/datasheet
+mothbeans,Pod Borer,Maruca vitrata,Insect,Pods,High,MARUCV,https://gd.eppo.int/taxon/MARUCV/datasheet
+mothbeans,Thrips,Thrips palmi,Insect,Flowers/Pods,Medium,THRIPL,https://gd.eppo.int/taxon/THRIPL/datasheet
+mothbeans,Leaf Roller,Omiodes indicata,Insect,Leaves,Low,NOTEIN,https://gd.eppo.int/taxon/NOTEIN/datasheet
+mothbeans,Root-knot Nematode,Meloidogyne incognita,Nematode,Roots,Medium,MELGIN,https://gd.eppo.int/taxon/MELGIN/datasheet
+mungbean,Thrips,Thrips palmi,Insect,Flowers/Pods,High,THRIPL,https://gd.eppo.int/taxon/THRIPL/datasheet
+mungbean,Whitefly,Bemisia tabaci,Insect,Leaves,High,BEMITA,https://gd.eppo.int/taxon/BEMITA/datasheet
+mungbean,Pod Borer,Maruca vitrata,Insect,Pods,High,MARUCV,https://gd.eppo.int/taxon/MARUCV/datasheet
+mungbean,Aphid,Aphis craccivora,Insect,Leaves/Shoots,Medium,APHICR,https://gd.eppo.int/taxon/APHICR/datasheet
+mungbean,Leaf Roller,Omiodes indicata,Insect,Leaves,Medium,NOTEIN,https://gd.eppo.int/taxon/NOTEIN/datasheet
+mungbean,Bruchid,Callosobruchus chinensis,Insect,Seeds,High,CALLCH,https://gd.eppo.int/taxon/CALLCH/datasheet
+muskmelon,Aphid,Aphis gossypii,Insect,Leaves/Shoots,High,APHIGO,https://gd.eppo.int/taxon/APHIGO/datasheet
+muskmelon,Cucumber Beetle,Diabrotica undecimpunctata,Insect,Leaves/Roots,High,DIABUN,https://gd.eppo.int/taxon/DIABUN/datasheet
+muskmelon,Whitefly,Bemisia tabaci,Insect,Leaves,High,BEMITA,https://gd.eppo.int/taxon/BEMITA/datasheet
+muskmelon,Thrips,Thrips palmi,Insect,Flowers/Fruit,Medium,THRIPL,https://gd.eppo.int/taxon/THRIPL/datasheet
+muskmelon,Spider Mite,Tetranychus urticae,Mite,Leaves,Medium,TETRUR,https://gd.eppo.int/taxon/TETRUR/datasheet
+muskmelon,Fruit Fly,Bactrocera cucurbitae,Insect,Fruit,High,DACUCU,https://gd.eppo.int/taxon/DACUCU/datasheet
+orange,Citrus Leafminer,Phyllocnistis citrella,Insect,Leaves,Medium,PHYOCI,https://gd.eppo.int/taxon/PHYOCI/datasheet
+orange,Asian Citrus Psyllid,Diaphorina citri,Insect,Shoots/Leaves,High,DIAACI,https://gd.eppo.int/taxon/DIAACI/datasheet
+orange,Scale Insect,Aonidiella aurantii,Insect,Bark/Fruit,High,AONDAU,https://gd.eppo.int/taxon/AONDAU/datasheet
+orange,Citrus Thrips,Scirtothrips citri,Insect,Fruit/Leaves,Medium,SCITCI,https://gd.eppo.int/taxon/SCITCI/datasheet
+orange,Mealybug,Planococcus citri,Insect,Fruit/Bark,Medium,PLANCT,https://gd.eppo.int/taxon/PLANCT/datasheet
+orange,Fruit Fly,Bactrocera dorsalis,Insect,Fruit,High,DACUDO,https://gd.eppo.int/taxon/DACUDO/datasheet
+papaya,Papaya Mealybug,Paracoccus marginatus,Insect,Leaves/Fruit,High,PAUME,https://gd.eppo.int/taxon/PAUME/datasheet
+papaya,Whitefly,Bemisia tabaci,Insect,Leaves,High,BEMITA,https://gd.eppo.int/taxon/BEMITA/datasheet
+papaya,Papaya Fruit Fly,Bactrocera papayae,Insect,Fruit,High,DACUPA,https://gd.eppo.int/taxon/DACUPA/datasheet
+papaya,Aphid,Aphis gossypii,Insect,Leaves/Shoots,Medium,APHIGO,https://gd.eppo.int/taxon/APHIGO/datasheet
+papaya,Thrips,Thrips palmi,Insect,Flowers/Fruit,Medium,THRIPL,https://gd.eppo.int/taxon/THRIPL/datasheet
+papaya,Spider Mite,Tetranychus urticae,Mite,Leaves,Medium,TETRUR,https://gd.eppo.int/taxon/TETRUR/datasheet
+pigeonpeas,Pod Fly,Melanagromyza obtusa,Insect,Pods,High,MELAOB,https://gd.eppo.int/taxon/MELAOB/datasheet
+pigeonpeas,Pod Borer,Helicoverpa armigera,Insect,Pods/Flowers,High,HELIAR,https://gd.eppo.int/taxon/HELIAR/datasheet
+pigeonpeas,Aphid,Aphis craccivora,Insect,Leaves/Shoots,Medium,APHICR,https://gd.eppo.int/taxon/APHICR/datasheet
+pigeonpeas,Thrips,Megalurothrips usitatus,Insect,Flowers/Pods,Medium,FRANFR,https://gd.eppo.int/taxon/FRANFR/datasheet
+pigeonpeas,Plume Moth,Exelastis atomosa,Insect,Pods,Medium,EXELAT,https://gd.eppo.int/taxon/EXELAT/datasheet
+pigeonpeas,Leaf Webber,Grapholita critica,Insect,Leaves,Low,GRAPHC,https://gd.eppo.int/taxon/GRAPHC/datasheet
+pomegranate,Pomegranate Butterfly,Virachola isocrates,Insect,Fruit,High,DEUDIS,https://gd.eppo.int/taxon/DEUDIS/datasheet
+pomegranate,Thrips,Thrips tabaci,Insect,Flowers/Fruit,High,THRITA,https://gd.eppo.int/taxon/THRITA/datasheet
+pomegranate,Aphid,Aphis punicae,Insect,Leaves/Shoots,Medium,APHIPU,https://gd.eppo.int/taxon/APHIPU/datasheet
+pomegranate,Mealybug,Planococcus citri,Insect,Fruit/Bark,Medium,PLANCT,https://gd.eppo.int/taxon/PLANCT/datasheet
+pomegranate,Scale Insect,Aonidiella aurantii,Insect,Bark/Leaves,Medium,AONDAU,https://gd.eppo.int/taxon/AONDAU/datasheet
+pomegranate,Fruit Borer,Deudorix isocrates,Insect,Fruit,High,DEUDIS,https://gd.eppo.int/taxon/DEUDIS/datasheet
+rice,Brown Planthopper,Nilaparvata lugens,Insect,Stem/Leaves,High,NILALU,https://gd.eppo.int/taxon/NILALU/datasheet
+rice,Rice Stem Borer,Chilo suppressalis,Insect,Stem,High,CHIOSS,https://gd.eppo.int/taxon/CHIOSS/datasheet
+rice,Leaf Folder,Cnaphalocrocis medinalis,Insect,Leaves,High,CNAPME,https://gd.eppo.int/taxon/CNAPME/datasheet
+rice,Gall Midge,Orseolia oryzae,Insect,Shoots,High,ORSAOR,https://gd.eppo.int/taxon/ORSAOR/datasheet
+rice,Rice Bug,Leptocorisa oratorius,Insect,Grains,Medium,LEPTOR,https://gd.eppo.int/taxon/LEPTOR/datasheet
+rice,Whorl Maggot,Hydrellia philippina,Insect,Leaves,Medium,HYDRPH,https://gd.eppo.int/taxon/HYDRPH/datasheet
+watermelon,Aphid,Aphis gossypii,Insect,Leaves/Shoots,High,APHIGO,https://gd.eppo.int/taxon/APHIGO/datasheet
+watermelon,Cucumber Beetle,Diabrotica undecimpunctata,Insect,Leaves/Roots,High,DIABUN,https://gd.eppo.int/taxon/DIABUN/datasheet
+watermelon,Thrips,Thrips palmi,Insect,Flowers/Fruit,Medium,THRIPL,https://gd.eppo.int/taxon/THRIPL/datasheet
+watermelon,Whitefly,Bemisia tabaci,Insect,Leaves,High,BEMITA,https://gd.eppo.int/taxon/BEMITA/datasheet
+watermelon,Spider Mite,Tetranychus urticae,Mite,Leaves,Medium,TETRUR,https://gd.eppo.int/taxon/TETRUR/datasheet
+watermelon,Fruit Fly,Bactrocera cucurbitae,Insect,Fruit,High,DACUCU,https://gd.eppo.int/taxon/DACUCU/datasheet
